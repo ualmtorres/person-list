@@ -17,10 +17,10 @@
 
     <?php
 
-    $conn = mysqli_connect('db', 'user', 'test', "myDb");
+    $mysqli = new mysqli('db', 'user', 'test', "myDb");
 
     $query = 'SELECT * From Person';
-    $result = mysqli_query($conn, $query);
+    $result = $mysqli->query($query);
 
     echo '<table class="table table-striped">';
     echo '<thead><tr><th></th><th>id</th><th>name</th></tr></thead>';
@@ -37,7 +37,7 @@
 
     $result->close();
 
-    mysqli_close($conn);
+    $mysqli->close();
 
     ?>
     </div>
